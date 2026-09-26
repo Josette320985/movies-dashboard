@@ -1,0 +1,227 @@
+.add-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  color: white;
+  padding-bottom: 3rem;
+}
+
+/* Topbar */
+.add-page .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-page .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.add-page .brand-icon {
+  font-size: 1.5rem;
+}
+
+.add-page .spacer {
+  width: 80px;
+}
+
+.add-page .btn-back {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.add-page .btn-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-3px);
+}
+
+/* Container y Card */
+.add-page .container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.add-page .form-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-page .form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.add-page .form-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.add-page .form-header p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+}
+
+/* Formulario */
+.add-page .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.add-page .field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.add-page .field input {
+  padding: 0.9rem 1.15rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.add-page .field input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.add-page .field input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.15);
+}
+
+.add-page .field-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Botones */
+.add-page .buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.add-page .buttons button {
+  flex: 1;
+  padding: 0.95rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Guardar en morado */
+.add-page .btn-save {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.add-page .btn-save:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.add-page .btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cancelar en ROJO llamativo */
+.add-page .btn-cancel {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.add-page .btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+}
+
+.add-page .btn-cancel:active {
+  transform: translateY(0);
+}
+
+/* Error y transición */
+.add-page .error {
+  text-align: center;
+  color: #fca5a5;
+  padding: 0.9rem;
+  background: rgba(239, 68, 68, 0.15);
+  border-radius: 12px;
+  border-left: 4px solid #ef4444;
+  font-size: 0.9rem;
+}
+
+.add-page .fade-enter-active,
+.add-page .fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.add-page .fade-enter-from,
+.add-page .fade-leave-to {
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .add-page .field-row {
+    flex-direction: column;
+  }
+  .add-page .form-card {
+    padding: 1.75rem;
+  }
+  .add-page .topbar {
+    padding: 1rem;
+  }
+  .add-page .spacer {
+    display: none;
+  }
+}
