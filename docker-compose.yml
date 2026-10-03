@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build: .
+    container_name: movies-frontend
+    hostname: movies-frontend
+    # Necesario para que Fail2Ban pueda manipular iptables
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    ports:
+      - "5173:80"
+    networks:
+      labnet:
+        ipv4_address: 172.30.0.30
+    restart: unless-stopped
+
+networks:
+  labnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24

@@ -1,0 +1,39 @@
+[DEFAULT]
+# Bloquear todos los puertos del contenedor para la IP baneada
+banaction = iptables-allports
+
+# IPs que nunca se banean (localhost interno)
+ignoreip = 127.0.0.1/8
+
+# No usar DNS (más seguro en Docker)
+usedns = no
+
+# Backend polling: necesario en Alpine
+backend = polling
+
+# Tiempo de baneo inicial: 10 minutos
+bantime = 10m
+
+# Incrementar baneo para reincidentes
+bantime.increment = true
+bantime.factor = 2
+bantime.maxtime = 1d
+bantime.rndtime = 30s
+
+# ============ JAILS ============
+
+# Deshabilitar jails por defecto que no aplican
+[sshd]
+enabled = false
+
+[sshd-ddos]
+enabled = false
+
+# Jail principal: HTTP Flood contra Nginx
+[http-flood]
+enabled = true
+port = http,https
+filter = http-flood
+logpath = /var/log/nginx/access.log
+maxretry = 60
+findtime = 10s
